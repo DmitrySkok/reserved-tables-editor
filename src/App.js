@@ -5,14 +5,21 @@ import Home from './components/pages/Home/Home';
 import NotFound from './components/pages/NotFound/NotFound';
 import Footer from './components/views/Footer/Footer';
 import SingleTable from './components/pages/SingleTable/SingleTable';
+import { fetchBooks } from './redux/tablesReducer';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => dispatch(fetchBooks()), [dispatch]);
+
   return (
     <Container>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/table/:id' element={<SingleTable />} />
+        <Route path="/table/:id" element={<SingleTable />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
