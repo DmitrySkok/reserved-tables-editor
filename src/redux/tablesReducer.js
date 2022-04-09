@@ -3,7 +3,7 @@
 
 
 // actions
-const createActionName = actionName => `app/posts/${actionName}`;
+const createActionName = actionName => `app/tables/${actionName}`;
 
 
 // action creators

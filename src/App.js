@@ -3,6 +3,8 @@ import Header from './components/views/Header/Header';
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/pages/Home/Home';
 import NotFound from './components/pages/NotFound/NotFound';
+import Footer from './components/views/Footer/Footer';
+import SingleTable from './components/pages/SingleTable/SingleTable';
 
 const App = () => {
   return (
@@ -10,8 +12,10 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path='/table/:id' element={<SingleTable />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </Container>
   );
 }
