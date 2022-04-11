@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <Navbar bg="primary" variant="dark" expand="lg" className="mt-4 mb-4 rounded">
       <Navbar.Brand className="ms-1 me-auto" as={NavLink} to="/">
-        Table editor
+        TablesEdtr
         <span className='fa fa-edit ms-1' style={{fontSize: '22px'}}></span>
       </Navbar.Brand>
       <Navbar.Toggle className="me-1" aria-controls="navbar" />

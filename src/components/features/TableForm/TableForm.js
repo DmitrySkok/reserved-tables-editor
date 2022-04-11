@@ -4,18 +4,19 @@ import { editTableRequest } from '../../../redux/tablesReducer';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllStatuses } from '../../../redux/statusesReducer';
 
+
 const TableForm = (props) => {
   const statuses = useSelector(getAllStatuses);
-
+  const id = props.id;
   const [status, setStatus] = useState(props.status || '');
   const [peopleAmount, setPeopleAmount] = useState(props.peopleAmount || '');
   const [maxPeopleAmount, setMaxPeopleAmount] = useState(props.maxPeopleAmount || '');
   const [bill, setBill] = useState(props.bill || '');
   
   const dispatch = useDispatch();
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(editTableRequest(status, peopleAmount, maxPeopleAmount, bill));
+    dispatch(editTableRequest({ status, peopleAmount, maxPeopleAmount, bill, id }));
   }
 
   return (

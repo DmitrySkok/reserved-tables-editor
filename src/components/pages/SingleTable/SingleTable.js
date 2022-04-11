@@ -5,18 +5,11 @@ import { useParams } from 'react-router-dom';
 
 const SingleTable = () => {
   const { id } = useParams();
-  const tableData = useSelector(state => getTableById(state, id));
+  const tableData = useSelector(state => getTableById(state, parseInt(id)));
   return (
     <>
-      <h1 className='mb-4'>Table {tableData.status}</h1>
-        <TableForm
-          key={tableData.id}
-          id={tableData.id}
-          status={tableData.status}
-          peopleAmount={tableData.peopleAmount}
-          maxPeopleAmount={tableData.maxPeopleAmount}
-          bill={tableData.bill}
-        />
+      <h1 className='mb-4'>Table {tableData.id}</h1>
+        <TableForm {...tableData} />
     </>
   )
 }

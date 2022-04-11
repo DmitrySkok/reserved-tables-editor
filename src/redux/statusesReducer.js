@@ -4,7 +4,7 @@ export const getAllStatuses = ({ statuses }) => statuses;
 
 
 // actions
-const createActionName = actionName => `app/statuses/${actionName}`;
+// const createActionName = actionName => `app/statuses/${actionName}`;
 
 // action creators
 
